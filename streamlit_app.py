@@ -15,7 +15,6 @@ if uploaded_file is not None:
     response = requests.post("http://127.0.0.1:8000/convert-xml-to-xlsx/", files=files)
     
     if response.status_code == 200:
-        # Display download button
         st.download_button(label="Download xlsx", data=response.content, file_name="output.xlsx", mime="text/xlsx")
     else:
         st.write("Error in conversion.")
